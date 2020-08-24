@@ -2,18 +2,19 @@
 
 This Roll20 API script allows for easy Wild Shape and Shapeshifting. 
 
-It is an improved version of the original DruidShift script by Bastlifa (https://github.com/Bastlifa) and provides more functionality, as well as compatibility with the new Updated Dynamic Lighting system.
+It is an improved version of the original DruidShift script by Bastlifa (https://github.com/Bastlifa) 
+and provides more functionality, as well as compatibility with the new Updated Dynamic Lighting system.
 
 Improvements made by: davidtheday (https://github.com/davidtheday)
 
 Please refer to the README file for instructions and other script info.
 
-*********************************************************************************************/
+******************************************************************************************************/
 
 
 on("ready", function() {
     
-    /************************************ CONFIGURATION *************************************/
+    /************************************ CONFIGURATION **********************************************/
 
     // Enter your character's name and darkvision stats here
     var druidCharName = "Gaius Stillwater";
@@ -23,7 +24,8 @@ on("ready", function() {
     // Change this to false if you don't want to use it
     var druidDynamicLighting = true;
 
-    // This sets whether or not the light from "Emits Light" settings is visible to others when using Legacy Dynamic Lighting
+    // This sets whether or not the light from "Emits Light" settings is visible to others when 
+    // using Legacy Dynamic Lighting.
     // Set this as false if you don't want other players to see what the Druid sees
     // Set this to true if you want others to see what the Druid sees
     var druidOtherPlayersLight = false;
@@ -188,7 +190,7 @@ on("ready", function() {
         "!DSTyrannosaurusRex":      ['Tyrannosaurus Rex', 'Huge', 0]
     }
 
-    /******************************************* END CONFIG ************************************
+    /******************************************* END CONFIG ******************************************
     
     An ominous cackle emanates from the depths of your computer screen.
     
@@ -392,6 +394,7 @@ on("ready", function() {
             }
         }
         
+        // If we're shifting TO an NPC/Beast/Not a PC
         if(getAttrByName(ShiftCharacter.id, 'npc', 'current') == 1)
         {
             //sendChat("", "NPC thing happened");

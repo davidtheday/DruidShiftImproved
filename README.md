@@ -1,4 +1,4 @@
-# DruidShift 2.0
+# DruidShift Improved v1.0
 > This Roll20 API script allows for easy Wild Shape and Shapeshifting. 
 
 It is an improved version of the original DruidShift script by [**Bastlifa**](https://github.com/Bastlifa) and provides more functionality, as well as compatibility with the new Updated Dynamic Lighting system.
@@ -268,4 +268,6 @@ Then have your druid player type `!DSCustom,Name of Creature (without the prefix
 ## Todo
 1. Strip the custom creature string elements so spaces can be used without breaking the script.
 2. Make this script character sheet agnostic so it can be used in any game system
+   - Remove/replace any 5e OGL sheet direct references
+   - Make stat change code dynamic so it can be used between game systems
 3. Make compatible with Updated Dynamic Lighting
