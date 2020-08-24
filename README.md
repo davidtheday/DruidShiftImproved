@@ -1,9 +1,9 @@
 # DruidShift 2.0
-> This script allows for easy Wild Shape/Shapeshifting for druids or other characters in Roll20 games.
+> This Roll20 API script allows for easy Wild Shape and Shapeshifting. 
 
-**Originally created by**: [Bastlifa](https://gist.github.com/Bastlifa)
+It is an improved version of the original DruidShift script by [**Bastlifa**](https://github.com/Bastlifa) and provides more functionality, as well as compatibility with the new Updated Dynamic Lighting system.
 
-**Modified by**: davidtheday
+Improvements and script update by [**davidtheday**](https://github.com/davidtheday)
 
 ## Script Info
 

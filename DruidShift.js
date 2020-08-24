@@ -1,7 +1,10 @@
-/**************************************** Druid Shift ****************************************
- 
-Originally created by: Bastlifa
-Modified by: davidtheday
+/**************************************** Druid Shift Improved ****************************************
+
+This Roll20 API script allows for easy Wild Shape and Shapeshifting. 
+
+It is an improved version of the original DruidShift script by Bastlifa (https://github.com/Bastlifa) and provides more functionality, as well as compatibility with the new Updated Dynamic Lighting system.
+
+Improvements made by: davidtheday (https://github.com/davidtheday)
 
 Please refer to the README file for instructions and other script info.
 
