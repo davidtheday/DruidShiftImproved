@@ -1,0 +1,91 @@
+?{
+Wildshape Forms:
+|🧝 Original Form (@{selected|token_name}),!DSBaseChar
+|(CR 0)🐒 Baboon,!DSBaboon
+|(CR 0)🦡 Badger,!DSBadger
+|(CR 0)🦇 Bat,!DSBat
+|(CR 0)🐈 Cat,!DSCat
+|(CR 0)🦀 Crab,!DSCrab
+|(CR 0)🦌 Deer,!DSDeer
+|(CR 0)🦅 Eagle,!DSEagle
+|(CR 0)🐸 Frog,!DSFrog
+|(CR 0)🐞 Giant Fire Beetle,!DSGiantFireBeetle
+|(CR 0)🐐 Goat,!DSGoat
+|(CR 0)🦅 Hawk,!DSHawk
+|(CR 0)🐕 Hyena,!DSHyena
+|(CR 0)🐕‍🦺 Jackal,!DSJackal
+|(CR 0)🦎 Lizard,!DSLizard
+|(CR 0)🐙 Octopus,!DSOctopus
+|(CR 0)🦉 Owl,!DSOwl
+|(CR 0)🐟 Quipper,!DSQuipper
+|(CR 0)🐀 Rat,!DSRat
+|(CR 0)🦅 Raven,!DSRaven
+|(CR 0)🦂 Scorpion,!DSScorpion
+|(CR 0)🐬 Sea Horse,!DSSeaHorse
+|(CR 0)🕷 Spider,!DSSpider
+|(CR 0)🦅 Vulture,!DSVulture
+|(CR 0)🐭 Weasel,!DSWeasel
+|(CR 1/8)🦅 Blood Hawk,!DSBloodHawk
+|(CR 1/8)🐫 Camel,!DSCamel
+|(CR 1/8)🐍 Flying Snake,!DSFlyingSnake
+|(CR 1/8)🦀 Giant Crab,!DSGiantCrab
+|(CR 1/8)🐀 Giant Rat,!DSGiantRat
+|(CR 1/8)🐭 Giant Weasel,!DSGiantWeasel
+|(CR 1/8)🐶 Mastiff,!DSMastiff
+|(CR 1/8)🐴 Mule,!DSMule
+|(CR 1/8)🐎 Pony,!DSPony
+|(CR 1/8)🐍 Poisonous Snake,!DSPoisonousSnake
+|(CR 1/8)🦟 Stirge,!DSStirge
+|(CR 1/4)🐦 Axe Beak,!DSAxeBeak
+|(CR 1/4)🐗 Boar,!DSBoar
+|(CR 1/4)🐍 Constrictor Snake,!DSConstrictorSnake
+|(CR 1/4)🐎 Draft Horse,!DSDraftHorse
+|(CR 1/4)🦌 Elk,!DSElk
+|(CR 1/4)🦡 Giant Badger,!DSGiantBadger
+|(CR 1/4)🦇 Giant Bat,!DSGiantBat
+|(CR 1/4)🐛 Giant Centipede,!DSGiantCentipede
+|(CR 1/4)🐸 Giant Frog,!DSGiantFrog
+|(CR 1/4)🦎 Giant Lizard,!DSGiantLizard
+|(CR 1/4)🦉 Giant Owl,!DSGiantOwl
+|(CR 1/4)🐍 Giant Poisonous Snake,!DSGiantPoisonousSnake
+|(CR 1/4)🕷 Giant Wolf Spider,!DSGiantWolfSpider
+|(CR 1/4)🐆 Panther,!DSPanther
+|(CR 1/4)🏇 Riding Horse,!DSRidingHorse
+|(CR 1/4)🐺 Wolf,!DSWolf
+|(CR 1/2)🦍 Ape,!DSApe
+|(CR 1/2)🐻 Black Bear,!DSBlackBear
+|(CR 1/2)🐊 Crocodile,!DSCrocodile
+|(CR 1/2)🐐 Giant Goat,!DSGiantGoat
+|(CR 1/2)🐬 Giant Sea Horse,!DSGiantSeaHorse
+|(CR 1/2)🐝 Giant Wasp,!DSGiantWasp
+|(CR 1/2)🦈 Reef Shark,!DSReefShark
+|(CR 1/2)🏇 Warhorse,!DSWarhorse
+|(CR 1)🐻 Brown Bear,!DSBrownBear
+|(CR 1)🐺 Dire Wolf,!DSDireWolf
+|(CR 1)🦅 Giant Eagle,!DSGiantEagle
+|(CR 1)🐕 Giant Hyena,!DSGiantHyena
+|(CR 1)🐙 Giant Octopus,!DSGiantOctopus
+|(CR 1)🕷 Giant Spider,!DSGiantSpider
+|(CR 1)🐸 Giant Toad,!DSGiantToad
+|(CR 1)🦅 Giant Vulture,!DSGiantVulture
+|(CR 1)🦁 Lion,!DSLion
+|(CR 1)🐯 Tiger,!DSTiger
+|(CR 2)🐗 Giant Boar,!DSGiantBoar
+|(CR 2)🐍 Giant Constrictor Snake,!DSGiantConstrictorSnake
+|(CR 2)🦌 Giant Elk,!DSGiantElk
+|(CR 2)🦈 Hunter Shark,!DSHunterShark
+|(CR 2)🦕 Plesiosaurus,!DSPlesiosaurus
+|(CR 2)🐻 Polar Bear,!DSPolarBear
+|(CR 2)🦏 Rhinoceros,!DSRhinoceros
+|(CR 2)🐯 Saber-Toothed Tiger,!DSSaberToothedTiger
+|(CR 3)🦕 Ankylosaurus,!DSAnkylosaurus
+|(CR 3)🦂 Giant Scorpion,!DSGiantScorpion
+|(CR 3)🐳 Killer Whale,!DSKillerWhale
+|(CR 4)🐘 Elephant,!DSElephant
+|(CR 5)🐊 Giant Crocodile,!DSGiantCrocodile
+|(CR 5)🦈 Giant Shark,!DSGiantShark
+|(CR 5)🦕 Triceratops,!DSTriceratops
+|(CR 6)🐘 Mammoth,!DSMammoth
+|(CR 7)🦍 Giant Ape,!DSGiantApe
+|(CR 8)🦖 Tyrannosaurus Rex,!DSTyrannosaurusRex
+}

@@ -1,0 +1,26 @@
+/w @{selected|token_name} &{template:npcaction} {{name=Shift}} {{rname=Forms}} {{description=[@{selected|token_name} Form 🧝](!DSBaseChar)
+**CR 0**
+[🐒 Baboon](!DSBaboon)[🦡 Badger](!DSBadger)[🦇 Bat](!DSBat)[🐈 Cat](!DSCat)[🦀 Crab](!DSCrab)[🦌 Deer](!DSDeer)[🦅 Eagle](!DSEagle)[🐸 Frog](!DSFrog)[🐞 Giant Fire Beetle](!DSGiantFireBeetle)[🐐 Goat](!DSGoat)[🦅 Hawk](!DSHawk)[🐕 Hyena](!DSHyena)[🐕 Jackal](!DSJackal)[🦎 Lizard](!DSLizard)[🐙 Octopus](!DSOctopus)[🦉 Owl](!DSOwl)[🐟 Quipper](!DSQuipper)[🐀 Rat](!DSRat)[🦅 Raven](!DSRaven)[🦂 Scorpion](!DSScorpion)[🐬 Sea Horse](!DSSeaHorse)[🕷 Spider](!DSSpider)[🦅 Vulture](!DSVulture)[🐭 Weasel](!DSWeasel)
+**CR 1/8**
+[🦅 Blood Hawk](!DSBloodHawk)[🐫 Camel](!DSCamel)[🐍 Flying Snake](!DSFlyingSnake)[🦀 Giant Crab](!DSGiantCrab)[🐀 Giant Rat](!DSGiantRat)[🐭 Giant Weasel](!DSGiantWeasel)[🐶 Mastiff](!DSMastiff)[🐴 Mule](!DSMule)[🐎 Pony](!DSPony)[🐍 Poisonous Snake](!DSPoisonousSnake)[🦟 Stirge](!DSStirge)
+**CR 1/4**
+[🐦 Axe Beak](!DSAxeBeak)[🐗 Boar](!DSBoar)[🐍 Constrictor Snake](!DSConstrictorSnake)[🐎 Draft Horse](!DSDraftHorse)[🦌 Elk](!DSElk)[🦡 Giant Badger](!DSGiantBadger)[🦇 Giant Bat](!DSGiantBat)[🐛 Giant Centipede](!DSGiantCentipede)[🐸 Giant Frog](!DSGiantFrog)[🦎 Giant Lizard](!DSGiantLizard)[🦉 Giant Owl](!DSGiantOwl)[🐍 Giant Poisonous Snake](!DSGiantPoisonousSnake)[🕷 Giant Wolf Spider](!DSGiantWolfSpider)[🐆 Panther](!DSPanther)[🏇 Riding Horse](!DSRidingHorse)[🐺 Wolf](!DSWolf)
+**CR 1/2**
+[🦍 Ape](!DSApe)[🐻 Black Bear](!DSBlackBear)[🐊 Crocodile](!DSCrocodile)[🐐 Giant Goat](!DSGiantGoat)[🐬 Giant Sea Horse](!DSGiantSeaHorse)[🐝 Giant Wasp](!DSGiantWasp)[🦈 Reef Shark](!DSReefShark)[🏇 Warhorse](!DSWarhorse)
+**CR 1**
+[🐻 Brown Bear](!DSBrownBear)[🐺 Dire Wolf](!DSDireWolf)[🦅 Giant Eagle](!DSGiantEagle)[🐕 Giant Hyena](!DSGiantHyena)[🐙 Giant Octopus](!DSGiantOctopus)[🕷 Giant Spider](!DSGiantSpider)[🐸 Giant Toad](!DSGiantToad)[🦅 Giant Vulture](!DSGiantVulture)[🦁 Lion](!DSLion)[🐯 Tiger](!DSTiger)
+**CR 2**
+[🐗 Giant Boar](!DSGiantBoar)[🐍 Giant Constrictor Snake](!DSGiantConstrictorSnake)[🦌 Giant Elk](!DSGiantElk)[🦈 Hunter Shark](!DSHunterShark)[🦕 Plesiosaurus](!DSPlesiosaurus)[🐻 Polar Bear](!DSPolarBear)[🦏 Rhinoceros](!DSRhinoceros)[🐯 Saber-Toothed Tiger](!DSSaberToothedTiger)
+**CR 3**
+[🦕 Ankylosaurus](!DSAnkylosaurus)[🦂 Giant Scorpion](!DSGiantScorpion)[🐳 Killer Whale](!DSKillerWhale)
+**CR 4**
+[🐘 Elephant](!DSElephant)
+**CR 5**
+[🐊 Giant Crocodile](!DSGiantCrocodile)[🦈 Giant Shark](!DSGiantShark)[🦕 Triceratops](!DSTriceratops)
+**CR 6**
+[🐘 Mammoth](!DSMammoth)
+**CR 7**
+[🦍 Giant Ape](!DSGiantApe)
+**CR 8**
+[🦖 Tyrannosaurus Rex](!DSTyrannosaurusRex)
+}} 
