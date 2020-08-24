@@ -1,7 +1,7 @@
 # DruidShift Improved v1.0
 > This Roll20 API script allows for easy Wild Shape and Shapeshifting. 
 
-It is an improved version of the original DruidShift script by [**Bastlifa**](https://github.com/Bastlifa) and provides more functionality, as well as compatibility with the new Updated Dynamic Lighting system.
+It is an improved version of the original DruidShift script by [**Bastlifa**](https://github.com/Bastlifa) and provides more functionality, as well as compatibility with the new Updated Dynamic Lighting (UDL) system.
 
 Improvements and script update by [**davidtheday**](https://github.com/davidtheday)
 
