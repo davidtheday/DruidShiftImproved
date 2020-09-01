@@ -50,7 +50,8 @@ This is for the 5E OGL sheet in Roll20. It will probably not work with any other
 ## Table of Contents
 [How to Use / Instructions](#how-to-use--instructions)
 - [1.0 Configuration of this Script](#10-configuration-of-this-script)
-  - [1.1 Configuration of this Script](#12-druid-name)
+  - [1.1 Configuration of this Script](#11-druid-name)
+  - [1.2 Shifted Form Name](#12-shifted-form-name)
   - [1.3 Druid Darkvision](#13-druid-darkvision)
   - [1.4 Dynamic Lighting Options](#14-dynamic-lighting-options)
   - [1.5 Character Prefix](#15-character-prefix)
