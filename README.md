@@ -1,7 +1,7 @@
-# DruidShift Improved v1.0
+# DruidShift Improved v0.3
 > This Roll20 API script allows for easy Wild Shape and Shapeshifting. 
 
-It is an improved version of the original DruidShift script by [**Bastlifa**](https://github.com/Bastlifa) and provides more functionality, as well as compatibility with the new Updated Dynamic Lighting (UDL) system.
+It is an improved version of the original [DruidShift](https://gist.github.com/Bastlifa/0fb83ccd7d1039851b72e472b2178ec3) script by [**Bastlifa**](https://github.com/Bastlifa) and provides more functionality, as well as compatibility with the new Updated Dynamic Lighting (UDL) system.
 
 Improvements and script update by [**davidtheday**](https://github.com/davidtheday)
 
@@ -9,7 +9,7 @@ Improvements and script update by [**davidtheday**](https://github.com/davidthed
 
 So how does this script work? It updates a selected character token with a chosen creature, changing its appearance, token size, and character sheet stats.
 
-This script builds off the amazing script written by Bastlifa.
+This script builds off the amazing [DruidShift](https://gist.github.com/Bastlifa/0fb83ccd7d1039851b72e472b2178ec3) script written by Bastlifa.
 
 While it is possible to use this script with simple chat commands, it is recommended to use one
 of the macros provided. There are options for rollable tables, as well as 
@@ -21,7 +21,14 @@ those changes. See more in [Section 2.2](#-22-edit-macros).
 This is for the 5E OGL sheet in Roll20. It will probably not work with any others without some modification. Also, I didn't do much in the way of error checking.
 
 ## Changelog
-**Changes made as of 2020-08-19 (davidtheday)**:
+**Version 0.3 update - 2020-09-01**:
+- Added support for the Updated Dynamic Lighting (UDL) system
+- Renamed the `druidDynamicLighting` config variable to `druidLDLtrick` and added the config variable `druidUDL` for UDL support
+- Fixed typos for the following `druidObject` entries: "Giant Badger", "Giant Bat", "Mammoth"
+- Added optional feature to display the WildShape creature name after character name, e.g. *Gaius Stillwater (Brown Bear)*. Use the corresponding config option to enable/disable.
+- Updated readme to reflect these changes
+
+**Version 0.2 updates - 2020-08-19**:
 - Updated instructions and moved them to this readme file
 - Removed the if statements for each creature and replaced it with JSON object named `druidObject`. This:
   1. clears up the code for readability and ease of modification, and
@@ -43,15 +50,15 @@ This is for the 5E OGL sheet in Roll20. It will probably not work with any other
 ## Table of Contents
 [How to Use / Instructions](#how-to-use--instructions)
 - [1.0 Configuration of this Script](#10-configuration-of-this-script)
-  - [1.1 Configuration of this Script](#11-druid-name)
-  - [1.2 Druid Darkvision](#12-druid-darkvision)
-  - [1.3 Dynamic Lighting Options](#13-dynamic-lighting-options)
-  - [1.4 Character Prefix](#14-character-prefix)
-  - [1.5 Stats Change](#15-stats-change)
-  - [1.6 Shift Macro](#16-shift-macro)
-  - [1.7 Shift Macro Token Action](#17-shift-macro-token-action)
-  - [1.8 Adding Creatures to Script](#18-adding-creatures-to-script)
-  - [1.9 Multiple Druids](#19-multiple-druids)
+  - [1.1 Configuration of this Script](#12-druid-name)
+  - [1.3 Druid Darkvision](#13-druid-darkvision)
+  - [1.4 Dynamic Lighting Options](#14-dynamic-lighting-options)
+  - [1.5 Character Prefix](#15-character-prefix)
+  - [1.6 Stats Change](#16-stats-change)
+  - [1.7 Shift Macro](#17-shift-macro)
+  - [1.8 Shift Macro Token Action](#18-shift-macro-token-action)
+  - [1.9 Adding Creatures to Script](#19-adding-creatures-to-script)
+  - [1.10 Multiple Druids](#110-multiple-druids)
 - [2.0 Creature Setup](#20-creature-setup)
   - [2.1 Adding Creatures to Journal](#21-adding-creatures-to-journal)
   - [2.2 Edit Macros](#22-edit-macros)
@@ -75,7 +82,19 @@ Change the value of `druidCharName` to the player character's druid name, exactl
 
 *Example 2*: `var druidCharName = "Johnny Treehugger";`
 
-### 1.2 Druid Darkvision
+### 1.2 Shifted Form Name
+
+Change the value of `druidFormAppend` to `true` if you want the shifted form's name to appear after the character name in the token's nameplate. Examples of nameplate with this setting as `true`:
+
+*Example 1*: "Gaius Stillwater (Brown Bear)"
+*Example 2*: "Johnny Treehugger (Giant Bat)"
+
+If you set this to `false`, then only the character's name will display in the token's nameplate. Examples of nameplate with this setting as `false`:
+
+*Example 1*: "Gaius Stillwater"
+*Example 2*: "Johnny Treehugger"
+
+### 1.3 Druid Darkvision
 Change the value of `druidDarkvision` to the player character's darkvision stat in feet. If the player does not have darkvision, use `0`.
 
 It's an integer, so don't use quotes.
@@ -84,37 +103,41 @@ It's an integer, so don't use quotes.
 
 *Example 2*: `var druidDarkvision = 0;` 
 
-### 1.3 Dynamic Lighting Options
+### 1.4 Dynamic Lighting Options
 
-**1.3.1 Darkvision Trick**
+**1.4.1 LDL Darkvision Trick**
 
-Change the value of `druidDynamicLighting` to `true` if you're using Legacy Dynamic Lighting and you wish to use the "trick" of setting "dim_radius" to -5 for a more accurate representation. Otherwise, use `false`.
+Change the value of `druidLDLtrick` to `true` if you're using Legacy Dynamic Lighting and you wish to use the "trick" of setting "dim_radius" to -5 for a more accurate representation. Otherwise, use `false`.
 
-**1.3.2 All Players See Light**
+**1.4.2 UDL Darkvision**
+
+Change the value of `druidUDL` to `true` if you wish to use Updated Dynamic Lighting. Otherwise, use `false`.
+
+**1.4.3 All Players See Light**
 
 Change the value of `druidOtherPlayersLight` to `true` if you're using Legacy Dynamic Lighting and you wish for all players to see what the druid can see. Otherwise, use `false`. 
 
 *Suggested: If you run a relaxed game where your players can see what all player characters can see, set this option to `true`. If you run a strict game where your players can only see what their character can see, set this option to `false`.*
 
-### 1.4 Character Prefix
+### 1.5 Character Prefix
 Change the value of `druidPrefix` to the prefix you would like to use with the creature characters being shifted into. More info on this below in [Section 2.1](#-21-adding-creatures-to-journal).
 
 *Example 1*: `var druidPrefix = "Druid";`
 
 *Example 2*: `var druidPrefix = "Shapeshifter";`
 
-### 1.5 Stats Change
+### 1.6 Stats Change
 Change the value of `druidStatsChange` to `true` if you want the druid character's *Int*, *Wis*, and *Cha* stats to transfer to the Shifted Creature's character sheet as per 5E SRD Rules. Otherwise, use `false`.
     
-**Important**: *if you have multiple druid/shapeshifting characters, this feature can cause a conflict if they attempt to use the same creature. Solution is mentioned below in [Section 1.9](#-19-multiple-druids)*
+**Important**: *if you have multiple druid/shapeshifting characters, this feature can cause a conflict if they attempt to use the same creature. Solution is mentioned below in [Section 1.10](#-110-multiple-druids)*
 
-### 1.6 Shift Macro
+### 1.7 Shift Macro
 Change the value of `druidMacro` to `true` if you wish a macro to be created when a player uses the custom creature feature. Otherwise, use `false`.
 
-### 1.7 Shift Macro Token Action
+### 1.8 Shift Macro Token Action
 Change the value of `druidMacroTokenAction` to `true` if you wish the custom creature macro to be available as a token action to players. If you don't want all players to have access to this, you will have to specific which characters have access under the Macros section of the Collections tab.
 
-### 1.8 Adding Creatures to Script
+### 1.9 Adding Creatures to Script
 The entire list of beasts from the 5E SRD is included in this script, however, if you wish to add creatures for your players to shift into. Use the format:
     
 `"!DSCreatureName": ['Creature Name', 'Size', darkvision range in ft.]`
@@ -127,9 +150,9 @@ For `'Size'`, use `'Normal'` for medium creatures and below. Other size options 
 
 Enter the darkvision range in ft. without quotes.
 
-**Important**: *Do not start the !DS tag of any creature (besides the druid player) with !DSBaseChar or it will not recognize the creature. The only exception is if you need multiple druid/shapeshifters to access this script. In that case, see [Section 1.9](#-19-multiple-druids) below for details.*
+**Important**: *Do not start the !DS tag of any creature (besides the druid player) with !DSBaseChar or it will not recognize the creature. The only exception is if you need multiple druid/shapeshifters to access this script. In that case, see [Section 1.10](#-110-multiple-druids) below for details.*
 
-### 1.9 Multiple Druids
+### 1.10 Multiple Druids
 If you wish for multiple Druid characters to use this script, you must add a new `!DSBaseChar` entry to the druidObject block below, and use a number as a suffix, e.g.:
 ```
 "!DSBaseChar2": ['Character ABC', 'Normal', 0],
@@ -151,7 +174,7 @@ Any creature that you wish a druid to shift into must be created by the GM as a 
 
 The name of this character must be prefixed with the `druidPrefix` that is set in the configuration.
 
-For example, if you use the default prefix "Druid", any creature wanting to be used for this script should be named "Druid Creature Name Here". For example, the creatures above in [Section 1.8](#-18-adding-creatures-to-script) would need characters named:
+For example, if you use the default prefix "Druid", any creature wanting to be used for this script should be named "Druid Creature Name Here". For example, the creatures above in [Section 1.9](#-19-adding-creatures-to-script) would need characters named:
 
 *Example 1*: "Druid Cave Bear"
 
@@ -264,10 +287,11 @@ Then have your druid player type `!DSCustom,Name of Creature (without the prefix
 ## Known Issues
 
 - If you drop a compendium entry onto a creature's character sheet more than once, the stats feature does not work. This has something to do with the drop_data attribute and needs to be looked at further.
+- If a creature character is created in the journal (e.g. *Druid Bat*), but its character sheet attributes have not been edited, attempting to shift to that creature will crash the API, due to an undefined attribute the script is trying to access. If this happens, you will need to restart the API sandbox in order to continue using API scripts. A fix for this has been added to the Todo list, but for now, please make sure that any creature used with this script has its character sheet attributes edited. **Note**: *Simply creating an NPC character sheet without editing any portion of it is not enough. You will need to click or "tab through" each of the attributes (Str, Dex, Con, Int, Wis, Cha) while editing the character sheet in order for Roll20 to register the **5e attributes** as a **roll20 attribute**, thus not breaking the script.*
 
 ## Todo
 1. Strip the custom creature string elements so spaces can be used without breaking the script.
 2. Make this script character sheet agnostic so it can be used in any game system
    - Remove/replace any 5e OGL sheet direct references
    - Make stat change code dynamic so it can be used between game systems
-3. Make compatible with Updated Dynamic Lighting
+3. Error handling for creature's whose character sheets have not been completed.

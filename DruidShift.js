@@ -5,7 +5,7 @@ This Roll20 API script allows for easy Wild Shape and Shapeshifting.
 It is an improved version of the original DruidShift script by Bastlifa (https://github.com/Bastlifa) 
 and provides more functionality, as well as compatibility with the new Updated Dynamic Lighting (UDL) system.
 
-Improvements made by: davidtheday (https://github.com/davidtheday)
+Improvements made by davidtheday (https://github.com/davidtheday)
 
 Please refer to the README file for instructions and other script info.
 
@@ -20,9 +20,16 @@ on("ready", function() {
     var druidCharName = "Gaius Stillwater";
     var druidDarkvision = 60; 
 
+    // This appends the name of the shifted form to the end of a character's nameplate
+    // e.g. "Gaius Stillwater (Brown Bear)"
+    // Set this as true if you want the shifted form's name appended to the end of the nameplate
+    // Set this as false if you just want the character's name
+    var druidFormAppend = true;
+
     // Use the Legacy Dynamic Lighting darkvision trick of setting the "dim start" value to -5 
     // Change this to false if you don't want to use it
-    var druidDynamicLighting = true;
+    var druidLDLtrick = true;
+    var druidUDL = true;
 
     // This sets whether or not the light from "Emits Light" settings is visible to others when 
     // using Legacy Dynamic Lighting.
@@ -49,7 +56,7 @@ on("ready", function() {
     // into that creature. 
     // Set druidMacro to true to create a macro for custom creatures.
     // Set druidMacro to false to disable macro creation.
-    // Set druidMacroTokenAction to true if you want to make it a token action, otherwise set to false
+    // Set druidMacroTokenAction to true if you want to make it available as a token action, otherwise set to false
     var druidMacro = true;
     var druidMacroTokenAction = true; 
 
@@ -133,8 +140,8 @@ on("ready", function() {
         "!DSConstrictorSnake":      ['Constrictor Snake', 'Large', 10],
         "!DSDraftHorse":            ['Draft Horse', 'Large', 0],
         "!DSElk":                   ['Elk', 'Large', 0],
-        "!DSGiantBadger":           ['GiantBadger', 'Normal', 30],
-        "!DSGiantBat":              ['GiantBat', 'Large', 60],
+        "!DSGiantBadger":           ['Giant Badger', 'Normal', 30],
+        "!DSGiantBat":              ['Giant Bat', 'Large', 60],
         "!DSGiantCentipede":        ['Giant Centipede', 'Normal', 30],
         "!DSGiantFrog":             ['Giant Frog', 'Normal', 30],
         "!DSGiantLizard":           ['Giant Lizard', 'Large', 30],
@@ -183,7 +190,7 @@ on("ready", function() {
         "!DSGiantShark":            ['Giant Shark', 'Huge', 60],
         "!DSTriceratops":           ['Triceratops', 'Huge', 0],
         // CR 6:
-        "!DSMammoth":               ['Mamoth', 'Huge', 0],
+        "!DSMammoth":               ['Mammoth', 'Huge', 0],
         // CR 7:
         "!DSGiantApe":              ['Giant Ape', 'Huge', 0],
         // CR 8:
@@ -212,11 +219,13 @@ on("ready", function() {
     
     on("chat:message", function (msg) {
         
+        var druidDimStart = 0;
+
         // Checks to make sure it's an API chat message, that it's NOT requesting a custom creature, and that it's a creature that DOES exist in druidObject
         if(msg.type === "api" && msg.content.split(',')[0] !== "!DSCustom" && druidObject.hasOwnProperty(msg.content)){
             
             // If GM wants to use the legacy Dynamic Lighting trick for darkvision
-            if (druidObject[msg.content][2] > 0 && druidDynamicLighting == true) {
+            if (druidObject[msg.content][2] > 0 && druidLDLtrick == true) {
                 druidDimStart = -5;
             } else {
                 druidDimStart = 0;
@@ -225,9 +234,9 @@ on("ready", function() {
             // Checks to see if it's a Player character as defined in the druidObject
             // If not, it assigns the custom druidPrefix string to the beginning
             if (msg.content.includes("!DSBaseChar")) {
-                CharacterGet(druidObject[msg.content][0], msg, druidObject[msg.content][1], druidObject[msg.content][2], druidDimStart, druidOtherPlayersLight, druidStatsChange);
+                CharacterGet(druidObject[msg.content][0], msg, druidObject[msg.content][1], druidObject[msg.content][2], druidDimStart, druidOtherPlayersLight, druidStatsChange, druidUDL, druidFormAppend);
             } else {
-                CharacterGet(druidPrefix + ' ' + druidObject[msg.content][0], msg, druidObject[msg.content][1], druidObject[msg.content][2], druidDimStart, druidOtherPlayersLight, druidStatsChange);
+                CharacterGet(druidPrefix + ' ' + druidObject[msg.content][0], msg, druidObject[msg.content][1], druidObject[msg.content][2], druidDimStart, druidOtherPlayersLight, druidStatsChange, druidUDL, druidFormAppend);
             }
         }
 
@@ -239,14 +248,14 @@ on("ready", function() {
             let creatureDV = parts[3]
 
             // If GM wants to use the Legacy Dynamic Lighting trick for darkvision
-            if(Number(creatureDV) > 0 && druidDynamicLighting == true){
+            if(Number(creatureDV) > 0 && druidLDLtrick == true){
                 druidDimStart = -5;
             } else {
                 druidDimStart = 0;
             }
 
             // Grab a character from the parsed custom data
-            CharacterGet(druidPrefix + ` ` + `${creatureName}`, msg, `${creatureSize}`, Number(creatureDV), druidDimStart, druidOtherPlayersLight, druidStatsChange)
+            CharacterGet(druidPrefix + ` ` + `${creatureName}`, msg, `${creatureSize}`, Number(creatureDV), druidDimStart, druidOtherPlayersLight, druidStatsChange, druidUDL, druidFormAppend)
             
             // Check to see if Macro feature is enabled
             if (druidMacro == true) {
@@ -301,7 +310,7 @@ on("ready", function() {
             });}
     }
 
-    function CharacterGet(characterName, msg, charSize, darkvision, darkvisionDim, otherPlayersLight, druidStatsChange)
+    function CharacterGet(characterName, msg, charSize, darkvision, darkvisionDim, otherPlayersLight, druidStatsChange, druidUDL, druidFormAppend)
     {
         if (!msg.selected || !getObj(msg.selected[0]._type,msg.selected[0]._id).get('represents'))
         {
@@ -352,10 +361,10 @@ on("ready", function() {
             // Intelligence Backup
             if (!findObjs({_type: 'attribute', name: 'ds_backup_int', _characterid: backupId}, {caseInsensitive: true})[0]) {
                 var statBackupInt = createObj("attribute", {name: "ds_backup_int", current: shiftToInt.get('current'), _characterid: backupId});
-                sendChat('', 'created backup');
+                //sendChat('', 'created backup'); // some debugging stuff
             } else {
                 var statBackupInt = findObjs({_type: 'attribute', name: 'ds_backup_int', _characterid: backupId}, {caseInsensitive: true})[0];
-                sendChat('', 'backup already exists');
+                //sendChat('', 'backup already exists'); // some debugging stuff
             }
             
             // Intelligence Modifier Backup
@@ -394,10 +403,31 @@ on("ready", function() {
             }
         }
         
+        // Setup the darkvision variables for the Updated Dynamic Lighting System
+        if(druidUDL) {
+            if(darkvision > 0) {
+                var udlDark = true;
+            } else {
+                var udlDark = false;
+            }
+        } else {
+            var udlDark = false;
+        }
+
         // If we're shifting TO an NPC/Beast/Not a PC
         if(getAttrByName(ShiftCharacter.id, 'npc', 'current') == 1)
         {
-            //sendChat("", "NPC thing happened");
+            // Check to see if we're appending the druid form to the end of the char name
+            if(druidFormAppend) {
+                // Strip "Druid" from the creature name for use below
+                var shiftedNamePos = characterName.indexOf(" ");
+                shiftedName = characterName.substring(shiftedNamePos+1);
+
+                var druidFormName = getObj("character", ShiftCharacterFrom.id).get("name") + ' (' + shiftedName + ')';
+            } else {
+                var druidFormName = getObj("character", ShiftCharacterFrom.id).get("name");
+            }
+            //sendChat("", "NPC thing happened"); // some debugging stuff
             _.each(msg.selected,function (o) {
                 getObj(o._type,o._id).set({
                     imgsrc: getCleanImgsrc(ShiftCharacter.get('avatar')),
@@ -409,7 +439,11 @@ on("ready", function() {
                     bar2_value: getAttrByName(ShiftCharacter.id, 'npc_ac', 'current'),
                     light_radius: darkvision,
                     light_dimradius: darkvisionDim,
-                    light_otherplayers: otherPlayersLight
+                    light_otherplayers: otherPlayersLight,
+                    has_bright_light_vision: druidUDL,
+                    has_night_vision: udlDark,
+                    night_vision_distance: darkvision,
+                    name: druidFormName
                 });
             });
 
@@ -435,7 +469,8 @@ on("ready", function() {
         }
         else
         {   
-            //sendChat("", "PC thing happened");
+            var druidFormName = getObj("character", ShiftCharacter.id).get("name");
+            //sendChat("", "PC thing happened"); // some debugging stuff
             _.each(msg.selected,function (o) {
                 getObj(o._type,o._id).set({
                     imgsrc: getCleanImgsrc(ShiftCharacter.get('avatar')),
@@ -447,7 +482,11 @@ on("ready", function() {
                     bar2_link: findObjs({type: "attribute", characterid: ShiftCharacter.id, name: 'ac'})[0].id,
                     light_radius: darkvision,
                     light_dimradius: darkvisionDim,
-                    light_otherplayers: otherPlayersLight
+                    light_otherplayers: otherPlayersLight,
+                    has_bright_light_vision: druidUDL,
+                    has_night_vision: udlDark,
+                    night_vision_distance: darkvision,
+                    name: druidFormName
                 });
             });
             
