@@ -28,7 +28,7 @@ This is for the 5E OGL sheet in Roll20. It will probably not work with any other
 - Added optional feature to display the WildShape creature name after character name, e.g. *Gaius Stillwater (Brown Bear)*. Use the corresponding config option to enable/disable.
 - Updated readme to reflect these changes
 
-**Version 0.2 updates - 2020-08-19**:
+**Version 0.2 update - 2020-08-19**:
 - Updated instructions and moved them to this readme file
 - Removed the if statements for each creature and replaced it with JSON object named `druidObject`. This:
   1. clears up the code for readability and ease of modification, and
