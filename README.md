@@ -64,9 +64,9 @@ This is for the 5E OGL sheet in Roll20. It will probably not work with any other
   - [2.2 Edit Macros](#22-edit-macros)
   - [2.3 Stats Change and Multiple Druids](#23-stats-change-and-multiple-druids)
 - [3.0 Using Custom Creature Characters](#30-using-custom-creature-characters)
-  - [3.1 Multiple Druids](#19-multiple-druids)
--[Known Issues](#known-issues)
--[Todo](#todo)
+  - [3.1 Multiple Druids](#19-multiple-druids)  
+[Known Issues](#known-issues)
+[Todo](#todo)
 
 
 ## How to Use / Instructions
