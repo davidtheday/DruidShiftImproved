@@ -1,4 +1,4 @@
-/**************************************** Druid Shift Improved ****************************************
+/**************************************** DruidShift Improved ****************************************
 
 This Roll20 API script allows for easy Wild Shape and Shapeshifting. 
 
